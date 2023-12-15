@@ -1,1 +1,14 @@
-
+name: Deployment
+on:
+  push:
+    branches:
+      -  main
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+      - name: cache dependancies
+        id: cache
+        uses: actions/cache@v3
